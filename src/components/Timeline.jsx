@@ -3,12 +3,13 @@ import schoolIcon from "../assets/school.svg";
 import workIcon from "../assets/work.svg";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Modal from "./Modal";
 
 const Timeline = ({ defaultColor }) => {
   const { scrollYProgress } = useScroll();
   const height = useTransform(scrollYProgress, [0, 1], ["0px", "100%"]);
   return (
-    <div className="">
+    <div>
       {timelineElements.map((element, index) => {
         const colors = [
           "bg-purple-400",
@@ -22,7 +23,7 @@ const Timeline = ({ defaultColor }) => {
         return (
           <div key={element.id} className="flex m-4 relative">
             <span
-              className={`bg-black w-0.5 h-4 absolute -bottom-[16px] left-20 opacity-60 sm:hidden ${
+              className={`bg-gradient-to-t from-indigo-600 to-pink-500 w-0.5 h-4 absolute -bottom-[16px] left-20 opacity-60 sm:hidden ${
                 index === timelineElements.length - 1 && "hidden"
               }`}
             ></span>
@@ -42,13 +43,20 @@ const Timeline = ({ defaultColor }) => {
                 className={`${color} w-10 p-1 rounded-lg z-20`}
               />
               <span
+                className={`bg-gradient-to-t from-indigo-400 to-pink-300 w-0.5 h-full absolute -bottom-[18px] left-[131px] opacity-60  ${
+                  index === timelineElements.length - 1 && "hidden"
+                }`}
+              ></span>
+              <span
                 className={`${color} h-[2px] w-8 translate-y-5 opacity-50`}
               ></span>
             </div>
             <div
-              className={`shadow-md border bg-transparent  border-slate-500/30 rounded-lg px-8 py-4 w-full text-center z-10 sm:w-96`}
+              className={`shadow-md border bg-transparent  border-slate-500/30 rounded-lg px-8 py-4 w-full text-center z-2 sm:w-96`}
             >
-              <div className="text-xl font-medium mb-1">{element.title}</div>
+              <div className="text-xl font-medium mb-1 px-4 sm:px-0">
+                {element.title}
+              </div>
               <div className="text-gray-500 mb-6 sm:mb-8 sm:text-xs">
                 {element.location}{" "}
                 <span className="sm:hidden">| {element.date}</span>
@@ -63,6 +71,9 @@ const Timeline = ({ defaultColor }) => {
                     {item}
                   </span>
                 ))}
+              </div>
+              <div className="flex flex-wrap mb-6 justify-center">
+                {element.cert && <Modal img={element.cert.img} />}
               </div>
               <Image
                 src={element.icon === "study" ? schoolIcon : workIcon}

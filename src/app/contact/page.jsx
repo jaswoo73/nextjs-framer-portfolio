@@ -1,19 +1,23 @@
 "use client";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import TypingText from "@/components/TypingText";
-import Link from "next/link";
-import Image from "next/image";
 import { toast } from "react-toastify";
+import ContactMethod from "@/components/ContactMethod";
+import ContactList from "@/components/ContactList";
+import { TbFidgetSpinner } from "react-icons/tb";
 
 const ContactPage = () => {
   const form = useRef();
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
     setError(false);
     setSuccess(false);
+    setLoading(true);
 
     emailjs
       .sendForm(
@@ -31,10 +35,11 @@ const ContactPage = () => {
         },
         (error) => {
           toast.error(
-            "Something went wrong! Please try again or use the email icon below."
+            "Something went wrong! Please try again or email me directly by clicking the email icon below."
           );
         }
-      );
+      )
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -44,21 +49,31 @@ const ContactPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-[calc(100vh-6rem)] flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
+      <div className="lg:h-[calc(100vh-6rem)] flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl lg:gap-10">
         {/* TEXT CONTAINER */}
-        <div className="h-1/5 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl font-Titi underline decoration-amber-500 font-bold text-white underline-offset-4 decoration-4">
-          CONTACT ME
+        <div className="h-1/5 lg:h-auto lg:w-1/2 flex flex-col items-center justify-center text-4xl lg:text-6xl font-bold mt-6 gap-4">
+          <h1 className="text-white font-Mont uppercase lg:mb-5">Contact me</h1>
+          <div className="flex-col lg:hidden">
+            <ContactList />
+          </div>
+          <div className="lg:flex-col gap-4 lg:flex hidden">
+            <ContactMethod method="email" value="jaswoo73@gmail.com" />
+            <ContactMethod method="whatsapp" value="017-3738673" />
+          </div>
         </div>
         {/* FORM CONTAINER */}
         <form
           onSubmit={sendEmail}
-          className="h-4/5 lg:h-full lg:w-1/2 bg-gradient-to-tl from-rose-300 to-rose-100 rounded lg:text-lg flex flex-col gap-5 lg:gap-6 justify-center p-16 lg:p-24 text-sm mb-3"
+          className="lg:w-1/2 lg:h-auto mb-2 lg:m-4 bg-gradient-to-tr from-rose-300 to-rose-100 rounded lg:text-lg flex flex-col gap-5 lg:gap-8 justify-center lg:p-6 p-4 text-sm"
           ref={form}
         >
+          <header className="text-3xl font-light text-white">
+            Write a message
+          </header>
           <input
             name="user_name"
             type="text"
-            className="bg-gray-200 rounded  outline-none shadow-xl p-3 text-slate-700 font-semibold placeholder:text-orange-400/70 placeholder:font-medium placeholder:text-sm focus:ring-sky-500 focus:ring-2 caret-indigo-400"
+            className="bg-gray-200 rounded outline-none shadow-xl p-3 text-slate-700 font-semibold placeholder:text-orange-400/70 placeholder:font-medium placeholder:text-sm focus:ring-sky-500 focus:ring-2 caret-indigo-400"
             placeholder="YOUR NAME"
             required
           />
@@ -77,26 +92,14 @@ const ContactPage = () => {
 
           <button
             type="submit"
-            className="bg-purple-200 rounded font-semibold text-gray-600 p-4"
+            className="bg-purple-300 rounded font-semibold text-white p-2 hover:bg-purple-400 grid place-items-center h-10"
           >
-            Send
+            {loading ? (
+              <TbFidgetSpinner size={20} className="animate-spin" />
+            ) : (
+              "Send"
+            )}
           </button>
-          <span className="flex gap-2 italic items-center">
-            Or shoot me an email directly{" "}
-            <Link
-              href="mailto:jaswoo73@gmail.com"
-              target="_blank"
-              className="hover:scale-[1.1] transition-all bg-white p-1 rounded-full shadow-md hover:shadow-none"
-            >
-              <Image
-                src="/gmail.png"
-                alt="Gmail"
-                width={24}
-                height={24}
-                className="transition-transform hover:rotate-[360deg]"
-              />
-            </Link>
-          </span>
         </form>
       </div>
     </motion.div>

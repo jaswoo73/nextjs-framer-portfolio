@@ -27,34 +27,10 @@ export const socialLinks = [
     title: "Facebook page",
   },
   {
-    url: "https://www.instagram.com/7ason_73/",
+    url: "https://www.ins`tag`ram.com/7ason_73/",
     img: "/instagram.png",
     title: "Instagram page",
   },
-];
-
-export const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "ReactJs",
-  "Next.js",
-  "Svelte",
-  "SvelteKit",
-  "Tailwind CSS",
-  "Framer Motion",
-  "Firebase",
-  "Stripe",
-  "Vite",
-  "Git",
-  "Express.js",
-  "Redux Toolkit",
-  "Styled Components",
-  "Contentful",
-  "Airtable",
-  "daisyUI",
-  "Sass",
-  "Prisma",
 ];
 
 const timelineElements = [
@@ -68,6 +44,9 @@ const timelineElements = [
     date: "2015-2018",
     icon: "study",
     color: "pink",
+    cert: {
+      img: ["/MEngCert.png"],
+    },
   },
   {
     id: 2,
@@ -79,6 +58,7 @@ const timelineElements = [
     date: "2018-2020",
     icon: "work",
     color: "purple",
+    tech: ["Microsoft Office", "AutoCAD", "Revit", "SketchUp"],
   },
   {
     id: 3,
@@ -94,7 +74,7 @@ const timelineElements = [
   },
   {
     id: 4,
-    title: "Full Stack Web Development Bootcamp",
+    title: "Full-Stack Web Development Bootcamp",
     location: "NEXT Academy",
     description:
       "Completed a 3-months full stack web development bootcamp at NEXT Academy",
@@ -113,6 +93,9 @@ const timelineElements = [
       "Express",
       "Prisma",
     ],
+    cert: {
+      img: ["/nextCert.png"],
+    },
   },
   {
     id: 5,
@@ -130,22 +113,74 @@ const timelineElements = [
     title: "Further Self Study After Bootcamp",
     location: "Youtube, Udemy, freeCodeCamp",
     description:
-      "Pursued further self-study in JavaScript and React, aand delved into other technologies such as headless CMS and Next.js, exploring their capabilities and gaining hands-on experience through project-based learning.",
+      "Pursued further self-study in JavaScript and React, and delved into other technologies such as headless CMS and Next.js, exploring their capabilities and gaining hands-on experience through project-based learning.",
     buttonText: "Details",
-    date: "2023-present",
+    date: "2023-now",
     icon: "study",
     color: "emerald",
     tech: [
       "ReactJs",
       "Next.js",
+      "Express",
+      "MongoDB",
+      "NodeJs",
+      "Tailwind CSS",
+      "Chakra UI",
+      "Cloudinary",
       "Framer Motion",
       "Vite",
       "Redux Toolkit",
       "Airtable",
       "Contentful",
       "Firebase",
+      "Recoil",
+      "React Query",
     ],
+    cert: {
+      img: ["/ReactCert.jpeg", "/MernCert.jpeg"],
+    },
   },
 ];
 
 export default timelineElements.reverse();
+
+export const aboutInfo = {
+  biography:
+    "Hello! I'm Jason Woo, an aspiring web developer based in KL.With a background in civil engineering, I bring with me a solid foundation in critical thinking, technical analysis, and logic, skills that are likely transferable to the world of coding. My journey into coding was fueled by a desire for greater fulfillment and curiosity for learning new things. I'm enthusiastic about crafting visually appealing and functional websites that leave a lasting impression. I'm particularly interested in understanding the technologies we use every day, such as websites, apps, and algorithms. I look forward to being involved in projects where I can continue learning and growing as a developer along the way. A job opportunity in web development would be greatly appreciated, as this would mark my transition from civil engineering to my first role in the field. Let's connect and bring your digital vision to life!",
+  quote:
+    "“Education is the passport to the future, for tomorrow belongs to those who prepare for it today. - Malcolm X",
+  skills: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "ReactJs",
+    "Git",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Express.js",
+    "daisyUI",
+    "Chakra UI",
+    "Next.js",
+    "MongoDB",
+    "mongoose",
+    "Cloudinary",
+    "Svelte",
+    "SvelteKit",
+    "Firebase",
+    "Stripe",
+    "Vite",
+    "Redux Toolkit",
+    "Styled Components",
+    "Contentful",
+    "Airtable",
+    "Sass",
+    "Prisma",
+  ],
+};
+
+export const bio = {
+  name: "Jason Woo",
+  tagline: "Web Developer",
+  description:
+    "Welcome to my digital portfolio! I'm Jason Woo, a junior web developer based in Klang Valley, KL. Formerly a civil engineer, I transitioned to coding driven by a desire for greater fulfillment and appetite for learning and personal development. Currently seeking my first job as a web developer, I'm eager to apply my knowledge and collaborate on projects. Let's work together to bring your digital ideas to life!",
+};

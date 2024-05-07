@@ -1,8 +1,22 @@
 "use client";
+import ScrollSvg from "@/components/ScrollSvg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { CgWebsite } from "react-icons/cg";
+import { IoLogoGithub } from "react-icons/io";
+import {
+  SiMongodb,
+  SiExpress,
+  SiReact,
+  SiNodedotjs,
+  SiCloudinary,
+  SiMongoose,
+  SiJsonwebtokens,
+  SiTailwindcss,
+  SiSocketdotio,
+} from "react-icons/si";
 
 const works = [
   {
@@ -12,7 +26,17 @@ const works = [
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
     img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
     link: "https://lama.dev",
-    tech: ["/github.png", "/linkedin.png", "/facebook.png"],
+    stacks: [
+      <SiMongodb />,
+      <SiExpress />,
+      <SiReact />,
+      <SiNodedotjs />,
+      <SiCloudinary />,
+      <SiMongoose />,
+      <SiJsonwebtokens />,
+      <SiTailwindcss />,
+      <SiSocketdotio />,
+    ],
   },
   {
     id: 2,
@@ -41,14 +65,13 @@ const works = [
 ];
 
 const PortfolioPage = () => {
-  const [currentCard, setCurrentCard] = useState(null);
+  // const [currentCard, setCurrentCard] = useState(null);
   const ref = useRef();
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
   const variants = {
     scrollButton: {
-      opacity: 0,
-      y: 20,
+      y: 10,
       transition: {
         duration: 3,
         repeat: Infinity,
@@ -62,25 +85,28 @@ const PortfolioPage = () => {
       animate={{ x: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-[600vh] relative" ref={ref}>
+      <div
+        className="h-[600vh] relative"
+        ref={ref}
+        style={{
+          scrollSnapType: "mandatory",
+        }}
+      >
         <div className="w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center font-Titi font-semibold text-white gap-10">
           My Works
-          <motion.img
-            variants={variants}
-            animate="scrollButton"
-            src="/scroll.png"
-            alt=""
-          />
+          <motion.div variants={variants} animate="scrollButton">
+            <ScrollSvg />
+          </motion.div>
         </div>
         <div className="sticky top-0 left-0 flex h-screen gap-4 items-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
-            <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-indigo-200 to-orange-200" />
+            <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-indigo-200 to-orange-200 " />
             {works.map((item) => (
               <div
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white">
+                <div className="flex flex-col gap-3 text-white border-2 p-4 rounded-md max-w-[85vw]">
                   <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
                     {item.title}
                   </h1>
@@ -90,11 +116,33 @@ const PortfolioPage = () => {
                   <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
                     {item.desc}
                   </p>
-                  <Link href={item.link} className="flex justify-end">
-                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">
-                      See Demo
-                    </button>
-                  </Link>
+                  <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-3 items-center flex-1">
+                      {item.stacks?.map((stack) => (
+                        <span className=" bg-neutral-600 p-1 rounded-full text-2xl">
+                          {stack}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex flex-col gap-2 max-w-content flex-nowrap">
+                      <Link href={item.link}>
+                        <button className="min-w-full p-2 text-sm md:p-4 md:text-md lg:text-lg bg-white text-gray-600 font-semibold rounded shadow-sm shadow-indigo-400 hover:bg-indigo-400 hover:text-white hover:shadow-slate-200 transition-all">
+                          <span className="flex items-center gap-2">
+                            <CgWebsite />
+                            <p>See Demo</p>
+                          </span>
+                        </button>
+                      </Link>
+                      <Link href={item.link}>
+                        <button className="min-w-full p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold rounded shadow-sm shadow-slate-400 hover:bg-slate-400 hover:text-white hover:shadow-slate-200 transition-all">
+                          <span className="flex items-center gap-2">
+                            <IoLogoGithub />
+                            <p>Source Code</p>
+                          </span>
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

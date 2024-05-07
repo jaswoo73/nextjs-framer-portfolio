@@ -10,13 +10,13 @@ const NavLink = ({ link }) => {
     <motion.div
       className="overflow-hidden"
       whileHover={{
-        boxShadow: "inset 0 -5px 0px 0px #e9829c",
+        boxShadow: "inset 0 -2px 0px 0px #e9829c",
         transition: { duration: 0.5 },
       }}
       whileTap={{}}
     >
       <Link
-        className={`rotate-z-6 rounded p-1 font-semibold transition-all ${
+        className={`rotate-z-6 rounded p-1 font-semibold transition-all hover:p-5 ${
           pathName === link.url &&
           "bg-gradient-to-r from-rose-300 to-orange-300 border-b-2 border-r-2 border-cyan-200"
         }`}

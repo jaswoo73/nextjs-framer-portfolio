@@ -15,6 +15,8 @@ module.exports = {
       fontFamily: {
         Titi: ['"Titillium Web"'],
         Mono: ['"Space Mono"'],
+        Pla: ["'Platypi'"],
+        Mont: ['"Montserrat"', "sans-serif"],
       },
     },
   },

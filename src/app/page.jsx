@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import TypingText from "@/components/TypingText";
-import { bio } from "../utils/bio";
+import { bio } from "../utils/constant";
 import { AiFillProject } from "react-icons/ai";
 import { MdOutlineContactMail } from "react-icons/md";
+import { GiSkills } from "react-icons/gi";
 
 const Homepage = () => {
   const { name, tagline, description } = bio;
@@ -67,21 +68,30 @@ const Homepage = () => {
             </p>
             {/* BUTTONS */}
             <div className="w-full flex gap-4">
-              <button className="p-4 rounded-lg ring-2 font-bold ring-orange-300 bg-slate-800 text-white hover:text-black hover:bg-orange-400 transition-all w-[180px]">
+              <button className="p-4 rounded-lg font-bold shadow-md shadow-purple-300 bg-slate-800 text-white hover:text-black hover:bg-purple-400 transition-all w-[200px] text-sm md:text-base hover:shadow-slate-200">
+                <a
+                  href="/about"
+                  className="flex items-center gap-2 justify-center"
+                >
+                  <GiSkills size={22} />
+                  <span>View Background</span>
+                </a>
+              </button>
+              <button className="p-4 rounded-lg font-bold shadow-md shadow-orange-300 bg-slate-800 text-white hover:text-black hover:bg-orange-400 transition-all w-[200px] text-sm md:text-base hover:shadow-slate-200">
                 <a
                   href="/portfolio"
                   className="flex items-center gap-2 justify-center"
                 >
-                  <AiFillProject size={20} />
+                  <AiFillProject size={22} />
                   <span>View Projects</span>
                 </a>
               </button>
-              <button className="p-4 rounded-lg ring-2 font-bold ring-sky-300 bg-slate-800 text-white hover:text-black hover:bg-sky-400  transition-all w-[180px]">
+              <button className="p-4 rounded-lg shadow-md font-bold shadow-sky-300 bg-slate-800 text-white hover:text-black hover:bg-sky-400  transition-all w-[200px] text-sm md:text-base hover:shadow-slate-200">
                 <a
                   href="/contact"
                   className="flex items-center gap-2 justify-center"
                 >
-                  <MdOutlineContactMail size={20} />
+                  <MdOutlineContactMail size={22} />
                   <span>Get in Touch</span>
                 </a>
               </button>
