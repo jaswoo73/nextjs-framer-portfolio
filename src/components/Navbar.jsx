@@ -1,7 +1,7 @@
 "use client";
+
 import Link from "next/link";
 import { SiHomebridge } from "react-icons/si";
-import { BsFillMenuButtonFill } from "react-icons/bs";
 import { links, socialLinks } from "@/utils/constant";
 import { useState } from "react";
 import Image from "next/image";

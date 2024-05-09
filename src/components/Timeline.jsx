@@ -2,7 +2,7 @@ import timelineElements from "../utils/constant";
 import schoolIcon from "../assets/school.svg";
 import workIcon from "../assets/work.svg";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import Modal from "./Modal";
 
 const Timeline = ({ defaultColor }) => {

@@ -24,7 +24,13 @@ const TransitionProvider = ({ children }) => {
           animate={{ opacity: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          {pathName === "/" ? "Home" : pathName.substring(1)}
+          {pathName === "/"
+            ? "Home"
+            : pathName === "/about" ||
+              pathName === "/portfolio" ||
+              pathName === "/contact"
+            ? pathName.substring(1)
+            : "Error 404"}
         </motion.div>
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-t-[100px] z-10 bottom-0"

@@ -27,7 +27,7 @@ export const socialLinks = [
     title: "Facebook page",
   },
   {
-    url: "https://www.ins`tag`ram.com/7ason_73/",
+    url: "https://www.instagram.com/7ason_73/",
     img: "/instagram.png",
     title: "Instagram page",
   },
