@@ -36,7 +36,7 @@ const AboutPage = () => {
           className="fixed inset-0 h-1 bg-gradient-to-r from-fuchsia-500 via-pink-500 to-fuchsia-500 z-50"
           style={{ scaleX: scrollYProgress }}
         />
-        <div className="p-6 sm:p-10 md:p-12 lg:p-20 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 2xl:w-1/2">
+        <div className="p-6 sm:p-10 md:p-12 lg:p-20 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 2xl:w-3/5">
           {/* BIOGRAPHY */}
           <div className="flex flex-col gap-10 justify-center">
             {/* BIOGRAPHY TITLE */}
@@ -106,7 +106,7 @@ const AboutPage = () => {
           </div>
         </div>
         {/* SVG CONTAINER */}
-        <div className="hidden lg:block lg:w-1/3 2xl:w-1/2 sticky 2xl:top-[50px] lg:top-[100px] right-[20px] z-0">
+        <div className="hidden lg:block lg:w-1/3 2xl:w-2/5 sticky 2xl:top-[50px] lg:top-[100px] right-[20px] z-0">
           <Crane scrollYProgress={scrollYProgress} />
         </div>
       </div>
