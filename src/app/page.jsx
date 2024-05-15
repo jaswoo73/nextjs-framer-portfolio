@@ -41,8 +41,9 @@ const Homepage = () => {
             transition={{ delay: 1, duration: 2 }}
             className="h-[200px] w-[200px] bg-cover bg-center bg-no-repeat md:h-[250px] md:w-[250px] lg:h-[300px] lg:w-[300px] xl:h-[350px] xl:w-[350px] mx-auto mt-5 lg:my-auto"
             style={{
-              backgroundImage: 'url("/hero.png")',
+              backgroundImage: 'url("/hero.jpeg")',
               boxShadow: "inset 0 0 0 7px rgb(255 255 255 /70%)",
+              filter: "contrast(1.1)",
               animation: "profile_animate 8s ease-in-out infinite",
             }}
           ></motion.div>
@@ -54,12 +55,10 @@ const Homepage = () => {
               {name}
             </h1>
 
-            <span className="self-start italic font-bold hidden lg:flex">
-              <TypingText text={["Civil Engineer", "Aspiring Web Developer"]} />
-            </span>
-
-            <span className="self-start italic font-bold block lg:hidden">
-              <TypingText text={["Civil Engineer", "Aspiring Web Developer"]} />
+            <span className="self-start italic font-bold">
+              <TypingText
+                text={["Civil Engineer", "Aspiring Software Developer"]}
+              />
             </span>
 
             {/* DESCRIPTION */}

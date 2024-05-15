@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import ScrollSvg from "./ScrollSvg";
 
-const Modal = ({ img, title }) => {
+const Modal = ({ img }) => {
   const [showModal, setShowModal] = useState(false);
   const handleClickOutsideModal = (e) => {
     if (e.target.id === "modal") setShowModal(false);
@@ -38,7 +38,7 @@ const Modal = ({ img, title }) => {
                 {/*body*/}
                 <div className="relative p-6 flex-auto overflow-y-auto bg-scroll">
                   {img.length > 1 && (
-                    <div className="absolute bottom-10 right-14">
+                    <div className="absolute bottom-10 right-14 animate-pulse">
                       <ScrollSvg />
                     </div>
                   )}

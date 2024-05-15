@@ -74,6 +74,17 @@ const timelineElements = [
   },
   {
     id: 4,
+    title: "Sole Proprietor",
+    location: "Shopee Platform",
+    description:
+      "Ventured into a side hobby/small business in e-commerce, selling Warhammer 40k merchandise, while also connecting with fellow enthusiasts in the community.",
+    buttonText: "Details",
+    date: "2023",
+    icon: "work",
+    color: "orange",
+  },
+  {
+    id: 5,
     title: "Full-Stack Web Development Bootcamp",
     location: "NEXT Academy",
     description:
@@ -98,17 +109,6 @@ const timelineElements = [
     },
   },
   {
-    id: 5,
-    title: "Sole Proprietor",
-    location: "Shopee Platform",
-    description:
-      "Ventured into a side hobby/small business in e-commerce, selling Warhammer 40k merchandise, while also connecting with fellow enthusiasts in the community.",
-    buttonText: "Details",
-    date: "2023",
-    icon: "work",
-    color: "orange",
-  },
-  {
     id: 6,
     title: "Further Self Study After Bootcamp",
     location: "Youtube, Udemy, freeCodeCamp",
@@ -125,6 +125,7 @@ const timelineElements = [
       "MongoDB",
       "NodeJs",
       "Tailwind CSS",
+      "Context API",
       "Chakra UI",
       "Cloudinary",
       "Framer Motion",
@@ -146,7 +147,7 @@ export default timelineElements.reverse();
 
 export const aboutInfo = {
   biography:
-    "Hello! I'm Jason Woo, an aspiring web developer based in KL.With a background in civil engineering, I bring with me a solid foundation in critical thinking, technical analysis, and logic, skills that are likely transferable to the world of coding. My journey into coding was fueled by a desire for greater fulfillment and curiosity for learning new things. I'm enthusiastic about crafting visually appealing and functional websites that leave a lasting impression. I'm particularly interested in understanding the technologies we use every day, such as websites, apps, and algorithms. I look forward to being involved in projects where I can continue learning and growing as a developer along the way. A job opportunity in web development would be greatly appreciated, as this would mark my transition from civil engineering to my first role in the field. Let's connect and bring your digital vision to life!",
+    "Hello! I am Jason Woo, an aspiring software developer based in KL. With a background in civil engineering, I bring a solid foundation in critical thinking, technical analysis, and logic—skills that are likely transferable to the world of coding. My journey into coding was fueled by a desire for greater fulfillment and a continuous hunger for new knowledge and skills. I am enthusiastic about visually appealing and functional websites that leave a lasting impression as well as the behind the scenes technicality of coding. Particularly, I am fascinated by the intricate technologies we encounter daily, such as websites, apps, and algorithms. I look forward to being involved in projects where I can continue learning and further develop as a developer along the way. A job opportunity in software development would be greatly appreciated, as this would mark a significant milestone in my transition from civil engineering to my first role in this field. Let's connect and bring your digital vision to life!",
   quote:
     "“Education is the passport to the future, for tomorrow belongs to those who prepare for it today. - Malcolm X",
   skills: [
@@ -156,8 +157,14 @@ export const aboutInfo = {
     "ReactJs",
     "Git",
     "Tailwind CSS",
+    "React Query",
+    "Context API",
+    "Recoil",
+    "Redux",
+    "Redux Toolkit",
     "Framer Motion",
     "Express.js",
+    "Node.js",
     "daisyUI",
     "Chakra UI",
     "Next.js",
@@ -169,8 +176,7 @@ export const aboutInfo = {
     "Firebase",
     "Stripe",
     "Vite",
-    "Redux Toolkit",
-    "Styled Components",
+    "styled-components",
     "Contentful",
     "Airtable",
     "Sass",
@@ -180,7 +186,7 @@ export const aboutInfo = {
 
 export const bio = {
   name: "Jason Woo",
-  tagline: "Web Developer",
+  tagline: "Software Developer",
   description:
-    "Welcome to my digital portfolio! I'm Jason Woo, a junior web developer based in Klang Valley, KL. Formerly a civil engineer, I transitioned to coding driven by a desire for greater fulfillment and appetite for learning and personal development. Currently seeking my first job as a web developer, I'm eager to apply my knowledge and collaborate on projects. Let's work together to bring your digital ideas to life!",
+    "Welcome to my digital portfolio! I'm Jason Woo, a junior software developer based in Klang Valley, KL. Formerly a civil engineer, I transitioned to coding driven by a desire for greater fulfilment and appetite for learning and personal development. Currently seeking my first job in the software development, I'm eager to apply my knowledge and collaborate on projects while honing my skills. Let's work together to bring your digital ideas to life!",
 };

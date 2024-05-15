@@ -15,14 +15,15 @@ const PortfolioLinks = ({ link, icon, text, id }) => {
       }}
     >
       <button
-        className={`min-w-full p-2 text-sm xl:p-3 md:text-base bg-white text-gray-600 font-semibold rounded shadow-sm  hover:text-white hover:shadow-slate-200 transition-all relative group ${
+        className={`min-w-full p-2 text-sm xl:p-3 md:text-base bg-white text-gray-600 font-semibold rounded shadow-sm  hover:text-white hover:shadow-slate-200 transition-all relative group flex flex-wrap ${
           text === "See Demo"
             ? "shadow-indigo-400 hover:bg-indigo-400"
-            : "shadow-gray-400 hover:bg-gray-400"
+            : "shadow-gray-500 hover:bg-gray-800"
         }`}
         title={
-          (id === 1 || id === 4) &&
-          "Please wait as the app spins up from cold start on first load"
+          id === 1 || id === 4
+            ? "Please wait as the app spins up from cold start on first load"
+            : undefined
         }
       >
         <span className="flex items-center gap-3">

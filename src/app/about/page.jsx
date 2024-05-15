@@ -106,7 +106,7 @@ const AboutPage = () => {
           </div>
         </div>
         {/* SVG CONTAINER */}
-        <div className="hidden lg:block lg:w-1/3 2xl:w-1/2 sticky top-[200px] xl:top-[100px] right-[20px] z-0">
+        <div className="hidden lg:block lg:w-1/3 2xl:w-1/2 sticky 2xl:top-[50px] lg:top-[100px] right-[20px] z-0">
           <Crane scrollYProgress={scrollYProgress} />
         </div>
       </div>

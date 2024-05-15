@@ -83,8 +83,9 @@ const Navbar = () => {
             initial={NavAnimate && { opacity: 0, x: -100, rotate: 0 }}
             animate={NavAnimate && { opacity: 1, x: 0 }}
             transition={{ delay: 1 + index * 0.2 }}
+            key={index}
           >
-            <NavLink link={link} key={index} />
+            <NavLink link={link} />
           </motion.div>
         ))}
       </div>
@@ -114,10 +115,10 @@ const Navbar = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 + index * 0.3, duration: 0.5 }}
+            key={index}
           >
             <Link
               href={link.url}
-              key={index}
               target="_blank"
               className="saturate-50 transition-all hover:saturate-150 "
             >
