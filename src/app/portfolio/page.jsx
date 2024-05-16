@@ -139,7 +139,7 @@ const works = [
     id: 6,
     color: "from-violet-300 to-blue-200",
     title: "React Budget App With React Router",
-    desc: "This is a budget app built using React.js and React Router. Users can add expenses and view their balance in different budget categories. This app utilizes route actions and loaders to handle data fetching and form submission and local storage for data storage.",
+    desc: "This is a budget app built using React.js and React Router where users can manage expenses and budgets. It uses route actions and loaders to handle data fetching and form submission and local storage for data storage.",
     img: "/projectImage/project6.png",
     link: "https://budgeteer-rrd.netlify.app/",
     source: "https://github.com/jaswoo73/react-rrd-budget-app",
@@ -153,7 +153,7 @@ const works = [
     id: 7,
     color: "from-blue-200 to-blue-300",
     title: "React Todo App With Theme Switcher",
-    desc: "This is a simple todo application built with React.js. Users can add new tasks and mark them as completed. This app also allows users to not only switch between light and dark theme, but the color scheme of the entire application interface as well. ",
+    desc: "This is a simple todo application built with React.js. This app also allows users to not only record and manage tasks, but control the color scheme for the entire application interface as well. ",
     img: "/projectImage/project7.png",
     link: "https://jaswoo73.github.io/React-Todo-With-ThemeSwitcher/",
     source: "https://github.com/jaswoo73/React-Todo-With-ThemeSwitcher",
@@ -179,7 +179,6 @@ const works = [
 ];
 
 const PortfolioPage = () => {
-  // const [currentCard, setCurrentCard] = useState(null);
   const ref = useRef();
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-88.89%"]);
@@ -219,7 +218,7 @@ const PortfolioPage = () => {
                     {item.title}
                   </h1>
                   <span className="h-1 w-[35%] mx-auto   bg-white"></span>
-                  <div className="relative mx-auto w-[95%] h-[40%] sm:h-[50%] md:w-[90%] md:h-[80%] lg:w-[75%] lg:h-[60%]">
+                  <div className="relative mx-auto max-[400px]:h-[30%] w-[95%] h-[40%] sm:h-[50%] md:w-[90%] md:h-[80%] lg:w-[75%] lg:h-[60%]">
                     <Image src={item.img} alt="" fill />
                   </div>
                   <p className="max-[400px]:text-sm max-[400px]:leading-[1.2] text-base lg:text-lg w-[95%] md:w-[90%] lg:w-[75%] mx-auto text-balance">
