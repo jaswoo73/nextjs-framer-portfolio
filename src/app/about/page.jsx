@@ -48,11 +48,11 @@ const AboutPage = () => {
             {/* BIOGRAPHY QUOTE */}
             <span className="italic">{quote}</span>
 
-            <ScrollSvg />
+            <ScrollSvg className="absolute top-10 right-5 sm:block sm:relative" />
           </div>
           {/* SKILLS CONTAINER*/}
           <div
-            className="flex flex-col gap-12 justify-center min-h-screen"
+            className="flex flex-col gap-12 justify-center min-h-screen relative"
             ref={skillRef}
           >
             {/* SKILL TITLE */}
@@ -83,7 +83,7 @@ const AboutPage = () => {
               })}
             </motion.div>
 
-            <ScrollSvg />
+            <ScrollSvg className="hidden sm:block sm:relative" />
           </div>
 
           {/* EXPERIENCE */}

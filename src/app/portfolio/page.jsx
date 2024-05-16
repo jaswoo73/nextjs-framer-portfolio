@@ -34,7 +34,7 @@ const works = [
     id: 1,
     color: "from-orange-200 to-orange-300",
     title: "MERN Full-Stack Threads App with Real-Time Chat",
-    desc: "A simple clone of Threads app built from scratch using MongoDB, Express.js, React.js, and Node.js (MERN stack), and leveraging the power of Socket.io to facilitate real-time conversations seamlessly. ",
+    desc: "A simple clone of Threads app built from scratch using MongoDB, Express.js, React.js, and Node.js (MERN stack), and leveraging the power of Socket.io to facilitate real-time conversations seamlessly.",
     img: "/projectImage/project1.jpeg",
     link: "https://mern-simple-thread-clone.onrender.com/",
     source: "https://github.com/jaswoo73/mern-simple-thread-clone",
@@ -139,7 +139,7 @@ const works = [
     id: 6,
     color: "from-violet-300 to-blue-200",
     title: "React Budget App With React Router",
-    desc: "This is a budget app built using React.js and React Router. Users can add expenses and view their balance in different budget categories. This app utilizes route actions and loaders to handle data fetching and form submission.",
+    desc: "This is a budget app built using React.js and React Router. Users can add expenses and view their balance in different budget categories. This app utilizes route actions and loaders to handle data fetching and form submission and local storage for data storage.",
     img: "/projectImage/project6.png",
     link: "https://budgeteer-rrd.netlify.app/",
     source: "https://github.com/jaswoo73/react-rrd-budget-app",
@@ -194,7 +194,7 @@ const PortfolioPage = () => {
   };
   return (
     <motion.div
-      className="h-full"
+      className="h-"
       initial={{ x: "-100vw" }}
       animate={{ x: "0%" }}
       transition={{ duration: 1 }}
@@ -215,21 +215,21 @@ const PortfolioPage = () => {
                 key={item.id}
               >
                 <div className="flex flex-col gap-4 text-white border-[1px] p-4 rounded-md max-w-[85vw] lg:w-[60%] h-[80%] lg:h-[90%] justify-between shadow-md shadow-stone-300">
-                  <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl w-[95%] md:w-[90%] lg:w-[75%] mx-auto min-h-[10%] text-center flex flex-col justify-end">
+                  <h1 className="max-[400px]:text-base text-2xl font-bold md:text-3xl lg:text-4xl w-[95%] md:w-[90%] lg:w-[75%] mx-auto min-h-[10%] text-center flex flex-col justify-end">
                     {item.title}
                   </h1>
                   <span className="h-1 w-[35%] mx-auto   bg-white"></span>
                   <div className="relative mx-auto w-[95%] h-[40%] sm:h-[50%] md:w-[90%] md:h-[80%] lg:w-[75%] lg:h-[60%]">
                     <Image src={item.img} alt="" fill />
                   </div>
-                  <p className="lg:text-lg w-[95%] md:w-[90%] lg:w-[75%] mx-auto text-balance">
+                  <p className="max-[400px]:text-sm max-[400px]:leading-[1.2] text-base lg:text-lg w-[95%] md:w-[90%] lg:w-[75%] mx-auto text-balance">
                     {item.desc}
                   </p>
                   <div className="flex gap-3 w-[95%] md:w-[90%] lg:w-[75%] mx-auto justify-between">
-                    <div className="flex flex-wrap gap-3 items-center max-w-[70%]">
+                    <div className="flex flex-wrap gap-3 items-center max-w-[70%] max-[400px]:max-w-[80%]">
                       {item.stacks?.map((stack, index) => (
                         <span
-                          className=" bg-neutral-600 p-1 rounded-full text-xl lg:text-2xl cursor-pointer relative"
+                          className=" bg-neutral-600 p-1 rounded-full text-xl max-[400px]:text-base lg:text-2xl cursor-pointer relative"
                           key={index}
                         >
                           {stack.icon}
@@ -241,7 +241,7 @@ const PortfolioPage = () => {
                         </span>
                       ))}
                     </div>
-                    <div className="flex flex-col gap-2 max-w-content flex-nowrap min-w-[130px]">
+                    <div className="flex flex-col gap-2 max-w-content flex-nowrap min-w-[130px] max-[400px]:hidden">
                       <PortfolioLinks
                         link={item.link}
                         icon={<VscVmRunning />}
@@ -252,6 +252,17 @@ const PortfolioPage = () => {
                         link={item.source}
                         icon={<IoLogoGithub />}
                         text="Source Code"
+                      />
+                    </div>
+                    <div className="hidden flex-col gap-2 max-[400px]:flex ">
+                      <PortfolioLinks
+                        link={item.link}
+                        icon={<VscVmRunning />}
+                        id={item.id}
+                      />
+                      <PortfolioLinks
+                        link={item.source}
+                        icon={<IoLogoGithub />}
                       />
                     </div>
                   </div>
@@ -275,7 +286,7 @@ const PortfolioPage = () => {
             <defs>
               <path
                 id="circlePath"
-                d="M 150, 150 m -80, 0 a 80,80 0 0,1 160,0 a 80,80 0 0,1 -160,0 "
+                d="M 150, 150 m -85, 0 a 85,85 0 0,1 170,0 a 85,85 0 0,1 -170,0 "
               />
             </defs>
             <text fill="#4b4b4b">

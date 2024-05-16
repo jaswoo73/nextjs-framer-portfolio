@@ -28,7 +28,7 @@ const PortfolioLinks = ({ link, icon, text, id }) => {
       >
         <span className="flex items-center gap-3">
           {icon}
-          <p>{text}</p>
+          {text && <p>{text}</p>}
         </span>
       </button>
     </Link>

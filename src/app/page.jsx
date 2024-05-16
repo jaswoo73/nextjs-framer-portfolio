@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 import TypingText from "@/components/TypingText";
 import { bio } from "../utils/constant";
 import { AiFillProject } from "react-icons/ai";
-import { MdOutlineContactMail } from "react-icons/md";
+import { RiMailSendFill } from "react-icons/ri";
 import { GiSkills } from "react-icons/gi";
+import Button from "@/components/Button";
 
 const Homepage = () => {
-  const { name, tagline, description } = bio;
+  const { name, description } = bio;
   return (
     <>
       <style jsx global>{`
@@ -26,12 +27,12 @@ const Homepage = () => {
         }
       `}</style>
       <motion.div
-        className="h-full"
+        className="h-full overflow-y-scroll"
         initial={{ y: "-200vh" }}
         animate={{ y: "0%" }}
         transition={{ duration: 1 }}
       >
-        <div className="h-full flex flex-col px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 lg:flex-row lg:gap-8 xl:gap-12">
+        <div className="h-auto flex flex-col px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 lg:flex-row lg:gap-8 xl:gap-12 mb-4">
           {/* IMAGE CONTAINER */}
           <motion.div
             animate={{
@@ -48,52 +49,49 @@ const Homepage = () => {
             }}
           ></motion.div>
           {/* TEXT CONTAINER */}
-          <div className="h-1/2 flex flex-col gap-6 lg:gap-8 justify-center items-center lg:h-full lg:w-2/3 mt-16 md:mt-10">
+          <div className="h-1/2 flex flex-col gap-6 lg:gap-8 justify-center items-center lg:h-full lg:w-2/3 mt-[2rem] md:mt-10">
             {/* TITLE */}
-            {/* <h1 className="text-6xl md:text-8xl font-thin self-start text-white drop-shadow-md"> */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-thin self-start text-white drop-shadow-md">
+            <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-thin self-start text-white drop-shadow-md">
               {name}
             </h1>
 
-            <span className="self-start italic font-bold">
+            <span className="self-start italic font-bold hidden md:block">
               <TypingText
                 text={["Civil Engineer", "Aspiring Software Developer"]}
+                fontSize="1.9em"
+              />
+            </span>
+            <span className="self-start italic font-bold block md:hidden">
+              <TypingText
+                text={["Civil Engineer", "Aspiring Software Developer"]}
+                fontSize="1.2em"
               />
             </span>
 
             {/* DESCRIPTION */}
-            <p className="text-md md:text-xl leading-loose text-balance text-white font-light tracking-tighter xl:leading-10">
+            <p className="text-sm sm:text-md md:text-xl leading-loose text-balance text-white font-light tracking-tighter xl:leading-10">
               {description}
             </p>
             {/* BUTTONS */}
-            <div className="w-full flex gap-4">
-              <button className="p-4 rounded-lg font-bold shadow-md shadow-purple-300 bg-slate-800 text-white hover:text-black hover:bg-purple-400 transition-all w-[200px] text-sm md:text-base hover:shadow-slate-200">
-                <a
-                  href="/about"
-                  className="flex items-center gap-2 justify-center"
-                >
-                  <GiSkills size={22} />
-                  <span>View Background</span>
-                </a>
-              </button>
-              <button className="p-4 rounded-lg font-bold shadow-md shadow-orange-300 bg-slate-800 text-white hover:text-black hover:bg-orange-400 transition-all w-[200px] text-sm md:text-base hover:shadow-slate-200">
-                <a
-                  href="/portfolio"
-                  className="flex items-center gap-2 justify-center"
-                >
-                  <AiFillProject size={22} />
-                  <span>View Projects</span>
-                </a>
-              </button>
-              <button className="p-4 rounded-lg shadow-md font-bold shadow-sky-300 bg-slate-800 text-white hover:text-black hover:bg-sky-400  transition-all w-[200px] text-sm md:text-base hover:shadow-slate-200">
-                <a
-                  href="/contact"
-                  className="flex items-center gap-2 justify-center"
-                >
-                  <MdOutlineContactMail size={22} />
-                  <span>Get in Touch</span>
-                </a>
-              </button>
+            <div className="w-full flex flex-wrap gap-4 md:justify-normal pb-2 justify-center sm:justify-normal">
+              <Button
+                className="shadow-purple-300 hover:bg-purple-400 w-[140px] md:w-[160px] hover:shadow-slate-200"
+                url="/about"
+                icon={<GiSkills size={21} />}
+                text="Background"
+              />
+              <Button
+                className="shadow-orange-300 hover:bg-orange-400 w-[140px] md:w-[160px] hover:shadow-slate-200"
+                url="/portfolio"
+                icon={<AiFillProject size={22} />}
+                text="Projects"
+              />
+              <Button
+                className="shadow-sky-300 hover:bg-sky-400 w-[140px] md:w-[160px] hover:shadow-slate-200"
+                url="/blog"
+                icon={<RiMailSendFill size={22} />}
+                text="Contact"
+              />
             </div>
           </div>
         </div>

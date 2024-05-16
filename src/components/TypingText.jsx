@@ -1,12 +1,12 @@
 import { TypeAnimation } from "react-type-animation";
 
-const TypingText = ({ text }) => {
+const TypingText = ({ text, fontSize }) => {
   return (
     <TypeAnimation
       sequence={["", 500, text[0], 1000, text[1], 1000]}
       speed={10}
       style={{
-        fontSize: "1.9em",
+        fontSize: fontSize,
         fontFamily: "Platypi",
         fontWeight: "300",
         color: "#544f4f",

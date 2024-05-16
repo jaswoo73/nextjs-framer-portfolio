@@ -38,7 +38,7 @@ const Modal = ({ img }) => {
                 {/*body*/}
                 <div className="relative p-6 flex-auto overflow-y-auto bg-scroll">
                   {img.length > 1 && (
-                    <div className="absolute bottom-10 right-14 animate-pulse">
+                    <div className="absolute bottom-10 right-10 animate-pulse">
                       <ScrollSvg />
                     </div>
                   )}

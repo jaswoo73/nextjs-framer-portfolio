@@ -53,7 +53,7 @@ const timelineElements = [
     title: "Civil Project Engineer",
     location: "Matrix Concepts Holdings Berhad",
     description:
-      "Managed resource planning, design, quality control, and execution for two housing projects in Sendayan.",
+      "Took charge in resource planning, design oversight, quality control, and project execution for two housing projects in Bandar Sri Sendayan.",
     buttonText: "Details",
     date: "2018-2020",
     icon: "work",
@@ -147,7 +147,7 @@ export default timelineElements.reverse();
 
 export const aboutInfo = {
   biography:
-    "Hello! I am Jason Woo, an aspiring software developer based in KL. With a background in civil engineering, I bring a solid foundation in critical thinking, technical analysis, and logic—skills that are likely transferable to the world of coding. My journey into coding was fueled by a desire for greater fulfillment and a continuous hunger for new knowledge and skills. I am enthusiastic about visually appealing and functional websites that leave a lasting impression as well as the behind the scenes technicality of coding. Particularly, I am fascinated by the intricate technologies we encounter daily, such as websites, apps, and algorithms. I look forward to being involved in projects where I can continue learning and further develop as a developer along the way. A job opportunity in software development would be greatly appreciated, as this would mark a significant milestone in my transition from civil engineering to my first role in this field. Let's connect and bring your digital vision to life!",
+    "Hello! I am Jason Woo, an aspiring software developer based in KL. With a background in civil engineering, I bring a solid foundation in critical thinking, technical analysis, and logic—skills that are likely transferable to the world of coding. My journey into coding was fueled by a desire for greater fulfillment and a continuous hunger for new knowledge and skills. I am enthusiastic about visually appealing and functional websites that leave a lasting impression, as well as the elegant solutions and problem-solving techniques inherent in coding. Particularly, I am fascinated by the intricate technologies we encounter daily, such as websites, apps, and algorithms. I look forward to being involved in projects where I can continue learning and further develop as a developer along the way. A job opportunity in software development would be greatly appreciated, as this would mark a significant milestone in my transition from civil engineering to my first role in this field. Let's connect and bring your digital vision to life!",
   quote:
     "“Education is the passport to the future, for tomorrow belongs to those who prepare for it today. - Malcolm X",
   skills: [
@@ -186,7 +186,6 @@ export const aboutInfo = {
 
 export const bio = {
   name: "Jason Woo",
-  tagline: "Software Developer",
   description:
-    "Welcome to my digital portfolio! I'm Jason Woo, a junior software developer based in Klang Valley, KL. Formerly a civil engineer, I transitioned to coding driven by a desire for greater fulfilment and appetite for learning and personal development. Currently seeking my first job in the software development, I'm eager to apply my knowledge and collaborate on projects while honing my skills. Let's work together to bring your digital ideas to life!",
+    "Welcome to my digital portfolio! I'm Jason Woo, a junior software developer based in Klang Valley, KL. Formerly a civil engineer, I transitioned to coding driven by a desire for greater fulfilment and appetite for learning and personal development. Currently seeking my first job in the software development, I'm eager to apply my knowledge and collaborate on projects while further developing my skills and abilities. Let's work together to bring your digital ideas to life!",
 };

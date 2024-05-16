@@ -45,6 +45,7 @@ const Navbar = () => {
   const listVariants = {
     closed: {
       x: "100vw",
+      display: "none",
       transition: {
         delay: 0.3,
         type: "spring",
@@ -54,6 +55,7 @@ const Navbar = () => {
     },
     opened: {
       x: "0",
+      display: "flex",
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.3,
@@ -127,7 +129,7 @@ const Navbar = () => {
                 alt={link.title}
                 width={24}
                 height={24}
-                className="hover:scale-[1.2] hover:shadow-indigo-200 transition-transform hover:rotate-[360deg]"
+                className="hover:scale-[1.2] hover:shadow-indigo-200 transition-transform hover:rotate-[360deg] min-w-[20px] min-h-[20px]"
               />
             </Link>
           </motion.div>
@@ -169,7 +171,15 @@ const Navbar = () => {
               className="z-40 hover:border-l px-2 hover:border-orange-500 hover:pl-5 transition-all"
               key={index}
             >
-              <Link href={link.url}>{link.title}</Link>
+              <Link
+                href={link.url}
+                className={`${pathName === link.url && "text-orange-600"}`}
+                onClick={() => {
+                  if (pathName === link.url) setOpen(false);
+                }}
+              >
+                {link.title}
+              </Link>
             </motion.div>
           ))}
         </motion.div>

@@ -10,7 +10,7 @@ const TransitionProvider = ({ children }) => {
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className="w-screen h-screen bg-gradient-to-br from-indigo-300 to-orange-200"
+        className="w-screen h-auto bg-gradient-to-br from-indigo-300 to-orange-200"
       >
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-b-[100px] z-10"
@@ -19,7 +19,7 @@ const TransitionProvider = ({ children }) => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
         <motion.div
-          className="fixed m-auto top-0 bottom-0 left-0 right-0 text-white text-8xl cursor-default w-fit h-fit z-20 capitalize"
+          className="fixed m-auto top-0 bottom-0 left-0 right-0 text-white text-4xl sm:text-8xl cursor-default w-fit h-fit z-20 capitalize"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -37,10 +37,10 @@ const TransitionProvider = ({ children }) => {
           initial={{ height: "130vh" }}
           animate={{
             height: "0vh",
-            transition: {
-              delay: 1,
-              duration: 0.3,
-            },
+          }}
+          transition={{
+            delay: 1,
+            duration: 0.3,
           }}
         />
         <div className="h-24">
