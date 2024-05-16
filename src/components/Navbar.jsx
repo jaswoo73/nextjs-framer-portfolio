@@ -8,6 +8,7 @@ import Image from "next/image";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { SiGithub } from "react-icons/si";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -139,7 +140,9 @@ const Navbar = () => {
       <div className="md:hidden">
         {/* MENU BUTTON */}
         <button
-          className="w-10 h-8 flex flex-col justify-between z-50 relative"
+          className={`w-10 h-8 flex flex-col justify-between z-50 ${
+            open ? "fixed top-12 -translate-y-1/2 right-6" : "relative"
+          }`}
           onClick={() => setOpen((prev) => !prev)}
         >
           <motion.div
@@ -163,7 +166,7 @@ const Navbar = () => {
           variants={listVariants}
           initial="closed"
           animate={open ? "opened" : "closed"}
-          className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col justify-center items-center gap-8 text-4xl z-40"
+          className="fixed top-0 left-0 w-screen h-screen bg-black text-white flex flex-col justify-center items-center gap-8 text-4xl z-40"
         >
           {links.map((link, index) => (
             <motion.div
@@ -182,6 +185,14 @@ const Navbar = () => {
               </Link>
             </motion.div>
           ))}
+          <motion.div
+            variants={listItemVariants}
+            className="z-40 hover:border-l px-2 hover:border-orange-500 hover:pl-5 transition-all"
+          >
+            <Link href="https://github.com/jaswoo73" target="_blank">
+              <SiGithub className="text-5xl hover:text-orange-500 transition-colors" />
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </div>
